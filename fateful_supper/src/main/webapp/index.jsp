@@ -1,5 +1,7 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<% if(1==1) { %>
+<h2>Teat</h2>
+<% } %>
 </body>
 </html>
