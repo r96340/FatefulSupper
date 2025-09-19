@@ -30,6 +30,11 @@ public class PlacesServlet extends HttpServlet {
         double centerLatitude = Double.parseDouble(request.getParameter("centerLatitude"));
         double centerLongitude = Double.parseDouble(request.getParameter("centerLongitude"));
         double radius = Double.parseDouble(request.getParameter("radius"));
+        String key = request.getParameter("key");
+        if (!key.equals(PlacesConfig.API_KEY)) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "API Key error");
+            return;
+        }
         String requestBody = buildRequestJson(includedTypes, maxResultCount,
             centerLatitude, centerLongitude, radius);
         URL url = new URL(PlacesConfig.API_BASE_URL + PlacesConfig.REQUEST_API);
