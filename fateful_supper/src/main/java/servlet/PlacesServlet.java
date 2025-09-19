@@ -60,7 +60,7 @@ public class PlacesServlet extends HttpServlet {
         double centerLatitude, double centerLongitude, double radius) {
         StringBuilder json = new StringBuilder();
         json.append("{");
-        // json.append("\"languageCode\":").append("\"zh-TW\"").append(",");
+        json.append("\"languageCode\":").append("\"zh-TW\"").append(",");
         json.append("\"includedTypes\":[\"").append(includedTypes).append("\"],");
         json.append("\"maxResultCount\":").append(maxResultCount).append(",");
         json.append("\"locationRestriction\":{");
