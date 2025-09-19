@@ -17,11 +17,19 @@ import java.sql.SQLException;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.*;
+import jakarta.servlet.http.*;
 
 @WebServlet("/search")
 public class PlacesServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String includedTypes = request.getParameter("includedTypes");
+        int maxResultCount = Integer.parseInt(request.getParameter("maxResultCount"));
+        double centerLatitude = Double.parseDouble(request.getParameter("centerLatitude"));
+        double centerLongitude = Double.parseDouble(request.getParameter("centerLongitude"));
+        double radius = Double.parseDouble(request.getParameter("radius"));
         String requestBody = buildRequestJson(includedTypes, maxResultCount,
             centerLatitude, centerLongitude, radius);
         URL url = new URL(PlacesConfig.API_BASE_URL + PlacesConfig.REQUEST_API);
@@ -35,21 +43,24 @@ public class PlacesServlet extends HttpServlet {
             byte[] input = requestBody.getBytes(StandardCharsets.UTF_8);
             os.write(input, 0, input.length);
         }
-        StringBuilder response = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                response.append(line);
+                result.append(line);
             }
         }
-        return response.toString();
+        HttpSession session = request.getSession();
+        session.setAttribute("placesResponse", result.toString());
+        System.out.println("Places API Response: " + result.toString());
     }
 
     private String buildRequestJson(String includedTypes, int maxResultCount,
         double centerLatitude, double centerLongitude, double radius) {
         StringBuilder json = new StringBuilder();
         json.append("{");
+        // json.append("\"languageCode\":").append("\"zh-TW\"").append(",");
         json.append("\"includedTypes\":[\"").append(includedTypes).append("\"],");
         json.append("\"maxResultCount\":").append(maxResultCount).append(",");
         json.append("\"locationRestriction\":{");
@@ -59,6 +70,7 @@ public class PlacesServlet extends HttpServlet {
         json.append("\"longitude\":").append(centerLongitude);
         json.append("},");
         json.append("\"radius\":").append(radius);
+        json.append("}");
         json.append("}");
         json.append("}");
 
