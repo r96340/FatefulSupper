@@ -53,7 +53,7 @@ public class PlacesServlet extends HttpServlet {
         }
         HttpSession session = request.getSession();
         session.setAttribute("placesResponse", result.toString());
-        System.out.println("Places API Response: " + result.toString());
+        response.sendRedirect("result.jsp");
     }
 
     private String buildRequestJson(String includedTypes, int maxResultCount,
