@@ -24,18 +24,19 @@ import jakarta.servlet.http.*;
 public class PlacesServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String key = request.getParameter("key");
+        if (!key.equals(PlacesConfig.API_KEY)) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "API Key error");
+            return;
+        }
         request.setCharacterEncoding("UTF-8");
         String includedTypes = request.getParameter("includedTypes");
         int maxResultCount = Integer.parseInt(request.getParameter("maxResultCount"));
         double centerLatitude = Double.parseDouble(request.getParameter("centerLatitude"));
         double centerLongitude = Double.parseDouble(request.getParameter("centerLongitude"));
         double radius = Double.parseDouble(request.getParameter("radius"));
-        String key = request.getParameter("key");
-        if (!key.equals(PlacesConfig.API_KEY)) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "API Key error");
-            return;
-        }
-        String requestBody = buildRequestJson(includedTypes, maxResultCount,
+        String[] excludedTypes = request.getParameterValues("excludedTypes");
+        String requestBody = buildRequestJson(includedTypes, excludedTypes, maxResultCount,
             centerLatitude, centerLongitude, radius);
         URL url = new URL(PlacesConfig.API_BASE_URL + PlacesConfig.REQUEST_API);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -61,12 +62,20 @@ public class PlacesServlet extends HttpServlet {
         response.sendRedirect("result.jsp");
     }
 
-    private String buildRequestJson(String includedTypes, int maxResultCount,
+    private String buildRequestJson(String includedTypes, String[] excludedTypes, int maxResultCount,
         double centerLatitude, double centerLongitude, double radius) {
         StringBuilder json = new StringBuilder();
         json.append("{");
         json.append("\"languageCode\":").append("\"zh-TW\"").append(",");
         json.append("\"includedTypes\":[\"").append(includedTypes).append("\"],");
+        json.append("\"excludedTypes\":[");
+        for (int i = 0; i < excludedTypes.length; i++) {
+            json.append("\"").append(excludedTypes[i]).append("\"");
+            if (i < excludedTypes.length - 1) {
+                json.append(",");
+            }
+        }
+        json.append("],");
         json.append("\"maxResultCount\":").append(maxResultCount).append(",");
         json.append("\"locationRestriction\":{");
         json.append("\"circle\":{");
