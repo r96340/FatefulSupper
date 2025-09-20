@@ -31,13 +31,14 @@ public class PlacesServlet extends HttpServlet {
         }
         request.setCharacterEncoding("UTF-8");
         String includedTypes = request.getParameter("includedTypes");
+        String[] excludedTypes = request.getParameterValues("excludedTypes");
         int maxResultCount = Integer.parseInt(request.getParameter("maxResultCount"));
         double centerLatitude = Double.parseDouble(request.getParameter("centerLatitude"));
         double centerLongitude = Double.parseDouble(request.getParameter("centerLongitude"));
         double radius = Double.parseDouble(request.getParameter("radius"));
-        String[] excludedTypes = request.getParameterValues("excludedTypes");
+        String rankPreference = request.getParameter("rankPreference");
         String requestBody = buildRequestJson(includedTypes, excludedTypes, maxResultCount,
-            centerLatitude, centerLongitude, radius);
+            centerLatitude, centerLongitude, radius, rankPreference);
         URL url = new URL(PlacesConfig.API_BASE_URL + PlacesConfig.REQUEST_API);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("POST");
@@ -63,7 +64,7 @@ public class PlacesServlet extends HttpServlet {
     }
 
     private String buildRequestJson(String includedTypes, String[] excludedTypes, int maxResultCount,
-        double centerLatitude, double centerLongitude, double radius) {
+        double centerLatitude, double centerLongitude, double radius, String rankPreference) {
         StringBuilder json = new StringBuilder();
         json.append("{");
         json.append("\"languageCode\":").append("\"zh-TW\"").append(",");
@@ -77,6 +78,7 @@ public class PlacesServlet extends HttpServlet {
         }
         json.append("],");
         json.append("\"maxResultCount\":").append(maxResultCount).append(",");
+        json.append("\"rankPreference\":").append("\"").append(rankPreference).append("\"").append(",");
         json.append("\"locationRestriction\":{");
         json.append("\"circle\":{");
         json.append("\"center\":{");

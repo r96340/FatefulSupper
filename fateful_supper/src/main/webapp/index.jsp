@@ -17,7 +17,7 @@
             <option value="breakfast_restaurant">早餐店（包含燒餅油條、清粥小菜）</option>
             <option value="chinese_restaurant">中式料理（包含台式料理）</option>
             <option value="deli">熟食</option>
-            <option value="diner">美式餐廳（diner）</option>
+            <option value="diner">餐館</option>
             <option value="fast_food_restaurant">速食</option>
             <option value="hamburger_restaurant">漢堡</option>
             <option value="italian_restaurant">義式料理</option>
@@ -33,7 +33,7 @@
         <div>
             <label for="excludedTypes">排除類型:</label><br>
             <%-- 停車場選項為無排除類型時補空用 --%>
-            <input type="checkbox" id="excludeParking" name="excludedTypes" value="parking" checked hidden>
+            <input type="checkbox" id="excludedTypes" name="excludedTypes" value="parking" checked hidden>
             <input type="checkbox" id="excludeRestaurant" name="excludedTypes" value="restaurant">
             <label for="excludeRestaurant">餐廳</label>
             <input type="checkbox" id="excludeFoodStore" name="excludedTypes" value="food_store">
@@ -57,7 +57,7 @@
             <input type="checkbox" id="excludeDeli" name="excludedTypes" value="deli">
             <label for="excludeDeli">熟食</label>
             <input type="checkbox" id="excludeDiner" name="excludedTypes" value="diner">
-            <label for="excludeDiner">美式餐廳（diner）</label>
+            <label for="excludeDiner">餐館</label>
             <input type="checkbox" id="excludeFastFoodRestaurant" name="excludedTypes" value="fast_food_restaurant">
             <label for="excludeFastFoodRestaurant">速食</label>
             <input type="checkbox" id="excludeHamburgerRestaurant" name="excludedTypes" value="hamburger_restaurant">
@@ -89,6 +89,11 @@
         <input type="text" id="centerLongitude" name="centerLongitude" required value="121.540202"><br><br>
         <label for="radius">搜尋半徑:</label>
         <input type="text" id="radius" name="radius" required value="1000.0"><br><br>
+        <label for="rankPreference">排序偏好:</label>
+        <select id="rankPreference" name="rankPreference" required>
+            <option value="POPULARITY" selected>知名度優先</option>
+            <option value="DISTANCE">距離優先</option>
+        </select><br><br>
         <label for="key">API金鑰:</label>
         <input type="text" id="key" name="key" required><br><br>
         <input type="submit" value="搜尋">
