@@ -16,7 +16,7 @@
             <option value="barbecue_restaurant">燒烤</option>
             <option value="breakfast_restaurant">早餐店（包含燒餅油條、清粥小菜）</option>
             <option value="chinese_restaurant">中式料理（包含台式料理）</option>
-            <option value="deli">食物外送（deli）</option>
+            <option value="deli">熟食</option>
             <option value="diner">美式餐廳（diner）</option>
             <option value="fast_food_restaurant">速食</option>
             <option value="hamburger_restaurant">漢堡</option>
@@ -55,7 +55,7 @@
             <input type="checkbox" id="excludeChineseRestaurant" name="excludedTypes" value="chinese_restaurant">
             <label for="excludeChineseRestaurant">中式料理（包含台式料理）</label><br>
             <input type="checkbox" id="excludeDeli" name="excludedTypes" value="deli">
-            <label for="excludeDeli">食物外送（deli）</label>
+            <label for="excludeDeli">熟食</label>
             <input type="checkbox" id="excludeDiner" name="excludedTypes" value="diner">
             <label for="excludeDiner">美式餐廳（diner）</label>
             <input type="checkbox" id="excludeFastFoodRestaurant" name="excludedTypes" value="fast_food_restaurant">
