@@ -98,7 +98,7 @@ public class SQLConversionServlet extends HttpServlet {
     }
 
     private String buildFieldMask(String[] additionalReturns) {
-        StringBuilder fieldMask = new StringBuilder("places.displayName");
+        StringBuilder fieldMask = new StringBuilder("places.displayName,places.id");
         if (additionalReturns != null) {
             for(int i = 0; i < additionalReturns.length; i++){
                 fieldMask.append(",").append(additionalReturns[i]);
