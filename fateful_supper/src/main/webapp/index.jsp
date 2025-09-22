@@ -96,7 +96,7 @@
         </select><br><br>
         <div>
             <label>回傳資料:</label><br>
-            <input type="checkbox" id="returnName" name="additionalReturns" value="places.places.name">
+            <input type="checkbox" id="returnName" name="additionalReturns" value="places.name">
             <label for="returnName">Google Maps內部註冊名稱</label>
             <input type="checkbox" id="returnId" name="additionalReturns" value="places.id">
             <label for="returnId">Google Maps內部唯一ID</label>
