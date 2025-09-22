@@ -95,7 +95,7 @@ public class PlacesServlet extends HttpServlet {
     }
 
     private String buildFieldMask(String[] additionalReturns) {
-        StringBuilder fieldMask = new StringBuilder("places.displayName, places.id");
+        StringBuilder fieldMask = new StringBuilder("places.displayName,places.id");
         if (additionalReturns != null) {
             for(int i = 0; i < additionalReturns.length; i++){
                 fieldMask.append(",").append(additionalReturns[i]);
