@@ -1,7 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
+    <script>
+        let selected = false;
+    </script>
+    <title>宵夜命運網API測試頁面</title>
+</head>
 <body>
-    <h1 id="title">宵夜命運網載入中...</h1>
+    <h1 id="title">宵夜命運網API載入中...</h1>
     <form id="searchForm" action="search" method="get" style="display: none;">
         <label for="includedTypes">搜尋類型:</label>
         <%-- 之後改為下拉式選單 --%>
@@ -95,7 +101,8 @@
             <option value="DISTANCE">距離優先</option>
         </select><br><br>
         <div>
-            <label>回傳資料:</label><br>
+            <input type="checkbox" id="select_all" onclick="setSelectStates();">
+            <label for="select_all">回傳資料:</label><br>
             <input type="checkbox" id="returnOpenNow" name="additionalReturns" value="places.regularOpeningHours.openNow">
             <label for="returnOpenNow">現在營業中與否</label>
             <input type="checkbox" id="returnId" name="additionalReturns" value="places.id">
@@ -168,14 +175,32 @@
                 console.log(position.coords.longitude);
                 document.getElementById('centerLatitude').value = position.coords.latitude;
                 document.getElementById('centerLongitude').value = position.coords.longitude;
-                document.getElementById('title').innerText = '宵夜命運網';
+                document.getElementById('title').innerText = '宵夜命運網API測試頁面';
                 document.getElementById('searchForm').style.display = 'block';
             },
             function(error) {
                 console.error('Geolocation error:', error);
-                document.getElementById('title').innerText = '宵夜命運網載入失敗，請檢查位置或網路連線後重新載入...';
+                document.getElementById('title').innerText = '宵夜命運網API載入失敗，請檢查位置或網路連線後重新載入...';
             }
         );
+
+        function setSelectStates() {
+            if(selected){
+                let selectAllCheckbox = document.getElementById('select_all');
+                let checkboxes = document.querySelectorAll('input[name="additionalReturns"]');
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.checked = false;
+                });
+                selected = false;
+            } else{
+                let selectAllCheckbox = document.getElementById('select_all');
+                let checkboxes = document.querySelectorAll('input[name="additionalReturns"]');
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.checked = selectAllCheckbox.checked;
+                });
+                selected = true;
+            }
+        }
     </script>
 </body>
 </html>
