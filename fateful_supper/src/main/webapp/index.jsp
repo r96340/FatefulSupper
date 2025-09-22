@@ -166,9 +166,11 @@
         </div><br><br>
         <label for="key">API金鑰:</label>
         <input type="text" id="key" name="key" required><br><br>
+        <label>搜尋</label><br>
         <input type="submit" value="搜尋" onclick="form.action='search';">
-        <input type="submit" value="產生URL" onclick="form.action='to_url';">
+        <input type="submit" value="產生搜尋URL" onclick="form.action='to_url';"><br>
         <input type="submit" value="產生SQL" onclick="form.action='to_sql';">
+        <input type="submit" value="產生語法URL" onclick="form.action='to_sql_url';">
     </form>
     <script>
         navigator.geolocation.getCurrentPosition(
