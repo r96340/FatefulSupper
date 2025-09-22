@@ -43,7 +43,7 @@
             <input type="checkbox" id="excludeConvenienceStore" name="excludedTypes" value="convenience_store">
             <label for="excludeConvenienceStore">超商</label>
             <input type="checkbox" id="excludeAmericanRestaurant" name="excludedTypes" value="american_restaurant">
-            <label for="excludeAmericanRestaurant">美式料理（american_restaurant）</label><br>
+            <label for="excludeAmericanRestaurant">美式料理</label><br>
             <input type="checkbox" id="excludeAsianRestaurant" name="excludedTypes" value="asian_restaurant">
             <label for="excludeAsianRestaurant">亞洲料理</label>
             <input type="checkbox" id="excludeBarAndGrill" name="excludedTypes" value="bar_and_grill">
@@ -96,8 +96,8 @@
         </select><br><br>
         <div>
             <label>回傳資料:</label><br>
-            <input type="checkbox" id="returnName" name="additionalReturns" value="places.name">
-            <label for="returnName">Google Maps內部註冊名稱</label>
+            <input type="checkbox" id="returnOpenNow" name="additionalReturns" value="places.regularOpeningHours.openNow">
+            <label for="returnOpenNow">現在營業中與否</label>
             <input type="checkbox" id="returnId" name="additionalReturns" value="places.id">
             <label for="returnId">Google Maps內部唯一ID</label>
             <input type="checkbox" id="returnTypes" name="additionalReturns" value="places.types">
@@ -156,8 +156,6 @@
             <label for="returnRestroom">是否有廁所</label>
             <input type="checkbox" id="returnAccessibilityOptions" name="additionalReturns" value="places.accessibilityOptions">
             <label for="returnAccessibilityOptions">無障礙設施</label>
-            <input type="checkbox" id="returnOpenNow" name="additionalReturns" value="places.regularOpeningHours.openNow">
-            <label for="returnOpenNow">現在營業中與否</label>
         </div><br><br>
         <label for="key">API金鑰:</label>
         <input type="text" id="key" name="key" required><br><br>
