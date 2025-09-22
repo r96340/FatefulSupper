@@ -156,6 +156,8 @@
             <label for="returnRestroom">是否有廁所</label>
             <input type="checkbox" id="returnAccessibilityOptions" name="additionalReturns" value="places.accessibilityOptions">
             <label for="returnAccessibilityOptions">無障礙設施</label>
+            <input type="checkbox" id="returnOpenNow" name="additionalReturns" value="places.regularOpeningHours.openNow">
+            <label for="returnOpenNow">現在營業中</label>
         </div><br><br>
         <label for="key">API金鑰:</label>
         <input type="text" id="key" name="key" required><br><br>
