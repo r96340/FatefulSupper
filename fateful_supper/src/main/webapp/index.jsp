@@ -105,8 +105,6 @@
             <label for="select_all">回傳資料:</label><br>
             <input type="checkbox" id="returnOpenNow" name="additionalReturns" value="places.regularOpeningHours.openNow">
             <label for="returnOpenNow">現在營業中與否</label>
-            <input type="checkbox" id="returnId" name="additionalReturns" value="places.id">
-            <label for="returnId">Google Maps內部唯一ID</label>
             <input type="checkbox" id="returnTypes" name="additionalReturns" value="places.types">
             <label for="returnTypes">所有類型</label>
             <input type="checkbox" id="returnNationalPhoneNumber" name="additionalReturns" value="places.nationalPhoneNumber">
