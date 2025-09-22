@@ -137,12 +137,8 @@
             <label for="returnEditorialSummary">Google Maps貢獻者整理的商家簡介</label>
             <input type="checkbox" id="returnPaymentOptions" name="additionalReturns" value="places.paymentOptions">
             <label for="returnPaymentOptions">付款方式</label>
-            <input type="checkbox" id="returnGenerativeSummary" name="additionalReturns" value="places.generativeSummary">
-            <label for="returnGenerativeSummary">Google Maps自動產生的商家簡介</label>
             <input type="checkbox" id="returnPriceRange" name="additionalReturns" value="places.priceRange">
             <label for="returnPriceRange">價格範圍</label><br>
-            <input type="checkbox" id="returnReviewSummary" name="additionalReturns" value="places.reviewSummary">
-            <label for="returnReviewSummary">Google Maps根據留言產生的商家狀況簡述</label>
             <input type="checkbox" id="returnUserRatingCount" name="additionalReturns" value="places.userRatingCount">
             <label for="returnUserRatingCount">留言的數量</label>
             <input type="checkbox" id="returnTakeout" name="additionalReturns" value="places.takeout">
