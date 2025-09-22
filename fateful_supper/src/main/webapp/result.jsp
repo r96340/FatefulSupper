@@ -1,11 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ page contentType="application/json;charset=UTF-8" language="java" isELIgnored="false" %>
 <%
     String placesResponse = (String) session.getAttribute("placesResponse");
+    if (placesResponse != null) {
+        out.print(placesResponse);
+    } else {
+        out.print("{\"message\": \"No results found.\"}");
+    }
 %>
-<html>
-<body>
-    <%= placesResponse != null ? placesResponse : "No results found." %>
-</body>
-</html>
