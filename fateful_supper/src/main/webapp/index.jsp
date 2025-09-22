@@ -96,65 +96,65 @@
         </select><br><br>
         <div>
             <label>回傳資料:</label><br>
-            <input type="checkbox" id="returnName" name="additionalReturns" value="name">
+            <input type="checkbox" id="returnName" name="additionalReturns" value="places.places.name">
             <label for="returnName">Google Maps內部註冊名稱</label>
-            <input type="checkbox" id="returnId" name="additionalReturns" value="id">
+            <input type="checkbox" id="returnId" name="additionalReturns" value="places.id">
             <label for="returnId">Google Maps內部唯一ID</label>
-            <input type="checkbox" id="returnTypes" name="additionalReturns" value="types">
+            <input type="checkbox" id="returnTypes" name="additionalReturns" value="places.types">
             <label for="returnTypes">所有類型</label>
-            <input type="checkbox" id="returnNationalPhoneNumber" name="additionalReturns" value="nationalPhoneNumber">
+            <input type="checkbox" id="returnNationalPhoneNumber" name="additionalReturns" value="places.nationalPhoneNumber">
             <label for="returnNationalPhoneNumber">商家電話</label>
-            <input type="checkbox" id="returnPrimaryTypeDisplayName" name="additionalReturns" value="primaryTypeDisplayName">
+            <input type="checkbox" id="returnPrimaryTypeDisplayName" name="additionalReturns" value="places.primaryTypeDisplayName">
             <label for="returnPrimaryTypeDisplayName">第一類型（的當地名稱）</label><br>
-            <input type="checkbox" id="returnFormattedAddress" name="additionalReturns" value="formattedAddress">
+            <input type="checkbox" id="returnFormattedAddress" name="additionalReturns" value="places.formattedAddress">
             <label for="returnFormattedAddress">完整地址</label>
-            <input type="checkbox" id="returnShortFormattedAddress" name="additionalReturns" value="shortFormattedAddress">
+            <input type="checkbox" id="returnShortFormattedAddress" name="additionalReturns" value="places.shortFormattedAddress">
             <label for="returnShortFormattedAddress">簡略地址</label>
-            <input type="checkbox" id="returnAddressComponents" name="additionalReturns" value="addressComponents">
+            <input type="checkbox" id="returnAddressComponents" name="additionalReturns" value="places.addressComponents">
             <label for="returnAddressComponents">詳細分級地址</label>
-            <input type="checkbox" id="returnLocation" name="additionalReturns" value="location">
+            <input type="checkbox" id="returnLocation" name="additionalReturns" value="places.location">
             <label for="returnLocation">經緯度</label>
-            <input type="checkbox" id="returnRating" name="additionalReturns" value="rating">
+            <input type="checkbox" id="returnRating" name="additionalReturns" value="places.rating">
             <label for="returnRating">評分</label><br>
-            <input type="checkbox" id="returnGoogleMapsUri" name="additionalReturns" value="googleMapsUri">
+            <input type="checkbox" id="returnGoogleMapsUri" name="additionalReturns" value="places.googleMapsUri">
             <label for="returnGoogleMapsUri">Google Maps連結</label>
-            <input type="checkbox" id="returnWebsiteUri" name="additionalReturns" value="websiteUri">
+            <input type="checkbox" id="returnWebsiteUri" name="additionalReturns" value="places.websiteUri">
             <label for="returnWebsiteUri">商家網站連結</label>
-            <input type="checkbox" id="returnReviews" name="additionalReturns" value="reviews">
+            <input type="checkbox" id="returnReviews" name="additionalReturns" value="places.reviews">
             <label for="returnReviews">留言</label>
-            <input type="checkbox" id="returnRegularOpeningHours" name="additionalReturns" value="regularOpeningHours">
+            <input type="checkbox" id="returnRegularOpeningHours" name="additionalReturns" value="places.regularOpeningHours">
             <label for="returnRegularOpeningHours">營業時間</label>
-            <input type="checkbox" id="returnPhotos" name="additionalReturns" value="photos">
+            <input type="checkbox" id="returnPhotos" name="additionalReturns" value="places.photos">
             <label for="returnPhotos">圖片</label><br>
-            <input type="checkbox" id="returnBusinessStatus" name="additionalReturns" value="businessStatus">
+            <input type="checkbox" id="returnBusinessStatus" name="additionalReturns" value="places.businessStatus">
             <label for="returnBusinessStatus">營業狀況</label>
-            <input type="checkbox" id="returnEditorialSummary" name="additionalReturns" value="editorialSummary">
+            <input type="checkbox" id="returnEditorialSummary" name="additionalReturns" value="places.editorialSummary">
             <label for="returnEditorialSummary">Google Maps貢獻者整理的商家簡介</label>
-            <input type="checkbox" id="returnPaymentOptions" name="additionalReturns" value="paymentOptions">
+            <input type="checkbox" id="returnPaymentOptions" name="additionalReturns" value="places.paymentOptions">
             <label for="returnPaymentOptions">付款方式</label>
-            <input type="checkbox" id="returnGenerativeSummary" name="additionalReturns" value="generativeSummary">
+            <input type="checkbox" id="returnGenerativeSummary" name="additionalReturns" value="places.generativeSummary">
             <label for="returnGenerativeSummary">Google Maps自動產生的商家簡介</label>
-            <input type="checkbox" id="returnPriceRange" name="additionalReturns" value="priceRange">
+            <input type="checkbox" id="returnPriceRange" name="additionalReturns" value="places.priceRange">
             <label for="returnPriceRange">價格範圍</label><br>
-            <input type="checkbox" id="returnReviewSummary" name="additionalReturns" value="reviewSummary">
+            <input type="checkbox" id="returnReviewSummary" name="additionalReturns" value="places.reviewSummary">
             <label for="returnReviewSummary">Google Maps根據留言產生的商家狀況簡述</label>
-            <input type="checkbox" id="returnUserRatingCount" name="additionalReturns" value="userRatingCount">
+            <input type="checkbox" id="returnUserRatingCount" name="additionalReturns" value="places.userRatingCount">
             <label for="returnUserRatingCount">留言的數量</label>
-            <input type="checkbox" id="returnTakeout" name="additionalReturns" value="takeout">
+            <input type="checkbox" id="returnTakeout" name="additionalReturns" value="places.takeout">
             <label for="returnTakeout">是否可以外帶</label>
-            <input type="checkbox" id="returnDelivery" name="additionalReturns" value="delivery">
+            <input type="checkbox" id="returnDelivery" name="additionalReturns" value="places.delivery">
             <label for="returnDelivery">是否可以外送</label>
-            <input type="checkbox" id="returnDineIn" name="additionalReturns" value="dineIn">
+            <input type="checkbox" id="returnDineIn" name="additionalReturns" value="places.dineIn">
             <label for="returnDineIn">是否可以內用</label><br>
-            <input type="checkbox" id="returnServesBeer" name="additionalReturns" value="servesBeer">
+            <input type="checkbox" id="returnServesBeer" name="additionalReturns" value="places.servesBeer">
             <label for="returnServesBeer">是否提供啤酒</label>
-            <input type="checkbox" id="returnServesVegetarian" name="additionalReturns" value="servesVegetarianFood">
+            <input type="checkbox" id="returnServesVegetarian" name="additionalReturns" value="places.servesVegetarianFood">
             <label for="returnServesVegetarian">是否提供素食</label>
-            <input type="checkbox" id="returnAllowsDogs" name="additionalReturns" value="allowsDogs">
+            <input type="checkbox" id="returnAllowsDogs" name="additionalReturns" value="places.allowsDogs">
             <label for="returnAllowsDogs">是否允許犬隻進入</label>
-            <input type="checkbox" id="returnRestroom" name="additionalReturns" value="restroom">
+            <input type="checkbox" id="returnRestroom" name="additionalReturns" value="places.restroom">
             <label for="returnRestroom">是否有廁所</label>
-            <input type="checkbox" id="returnAccessibilityOptions" name="additionalReturns" value="accessibilityOptions">
+            <input type="checkbox" id="returnAccessibilityOptions" name="additionalReturns" value="places.accessibilityOptions">
             <label for="returnAccessibilityOptions">無障礙設施</label>
         </div><br><br>
         <label for="key">API金鑰:</label>

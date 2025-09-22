@@ -37,6 +37,7 @@ public class PlacesServlet extends HttpServlet {
         double centerLongitude = Double.parseDouble(request.getParameter("centerLongitude"));
         double radius = Double.parseDouble(request.getParameter("radius"));
         String rankPreference = request.getParameter("rankPreference");
+        String[] additionalReturns = request.getParameterValues("additionalReturns");
         String requestBody = buildRequestJson(includedTypes, excludedTypes, maxResultCount,
             centerLatitude, centerLongitude, radius, rankPreference);
         URL url = new URL(PlacesConfig.API_BASE_URL + PlacesConfig.REQUEST_API);
@@ -44,7 +45,8 @@ public class PlacesServlet extends HttpServlet {
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");
         conn.setRequestProperty("X-Goog-Api-Key", PlacesConfig.API_KEY);
-        conn.setRequestProperty("X-Goog-FieldMask", "places.displayName");
+        String fieldMask = buildFieldMask(additionalReturns);
+        conn.setRequestProperty("X-Goog-FieldMask", fieldMask);
         conn.setDoOutput(true);
         try (OutputStream os = conn.getOutputStream()) {
             byte[] input = requestBody.getBytes(StandardCharsets.UTF_8);
@@ -89,19 +91,16 @@ public class PlacesServlet extends HttpServlet {
         json.append("}");
         json.append("}");
         json.append("}");
-
         return json.toString();
     }
 
-    /**
-     * 跳脫 JSON 特殊字元
-     */
-    private String escapeJson(String text) {
-        if (text == null) return "";
-        return text.replace("\"", "\\\"")
-                  .replace("\\", "\\\\")
-                  .replace("\n", "\\n")
-                  .replace("\r", "\\r")
-                  .replace("\t", "\\t");
+    private String buildFieldMask(String[] additionalReturns) {
+        StringBuilder fieldMask = new StringBuilder("places.displayName");
+        if (additionalReturns != null) {
+            for(int i = 0; i < additionalReturns.length; i++){
+                fieldMask.append(",").append(additionalReturns[i]);
+            }
+        }
+        return fieldMask.toString();
     }
 }
