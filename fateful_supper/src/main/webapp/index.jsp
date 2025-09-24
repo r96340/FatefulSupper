@@ -57,9 +57,9 @@
             <input type="checkbox" id="excludeBarbecueRestaurant" name="excludedTypes" value="barbecue_restaurant">
             <label for="excludeBarbecueRestaurant">燒烤</label>
             <input type="checkbox" id="excludeBreakfastRestaurant" name="excludedTypes" value="breakfast_restaurant">
-            <label for="excludeBreakfastRestaurant">早餐店（包含燒餅油條、清粥小菜）</label>
+            <label for="excludeBreakfastRestaurant">早餐店（包含燒餅油條、清粥小菜）</label><br>
             <input type="checkbox" id="excludeChineseRestaurant" name="excludedTypes" value="chinese_restaurant">
-            <label for="excludeChineseRestaurant">中式料理（包含台式料理）</label><br>
+            <label for="excludeChineseRestaurant">中式料理（包含台式料理）</label>
             <input type="checkbox" id="excludeDeli" name="excludedTypes" value="deli">
             <label for="excludeDeli">熟食</label>
             <input type="checkbox" id="excludeDiner" name="excludedTypes" value="diner">
@@ -141,14 +141,12 @@
             <label for="returnPriceRange">價格範圍</label><br>
             <input type="checkbox" id="returnUserRatingCount" name="additionalReturns" value="places.userRatingCount">
             <label for="returnUserRatingCount">留言的數量</label>
-            <input type="checkbox" id="returnTakeout" name="additionalReturns" value="places.takeout">
-            <label for="returnTakeout">是否可以外帶</label>
+            <input type="checkbox" id="returnTakeout" name="additionalReturns" value="places.takeout,places.dineIn">
+            <label for="returnTakeout">是否可以外帶/內用</label>
             <input type="checkbox" id="returnDelivery" name="additionalReturns" value="places.delivery">
             <label for="returnDelivery">是否可以外送</label>
-            <input type="checkbox" id="returnDineIn" name="additionalReturns" value="places.dineIn">
-            <label for="returnDineIn">是否可以內用</label><br>
             <input type="checkbox" id="returnServesBeer" name="additionalReturns" value="places.servesBeer">
-            <label for="returnServesBeer">是否提供啤酒</label>
+            <label for="returnServesBeer">是否提供啤酒</label><br>
             <input type="checkbox" id="returnServesVegetarian" name="additionalReturns" value="places.servesVegetarianFood">
             <label for="returnServesVegetarian">是否提供素食</label>
             <input type="checkbox" id="returnAllowsDogs" name="additionalReturns" value="places.allowsDogs">
