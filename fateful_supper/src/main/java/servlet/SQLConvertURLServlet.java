@@ -20,8 +20,8 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
-@WebServlet("/to_url")
-public class URLConversionServlet extends HttpServlet {
+@WebServlet("/to_sql_url")
+public class SQLConvertURLServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String key = request.getParameter("key");
@@ -31,9 +31,8 @@ public class URLConversionServlet extends HttpServlet {
         }
         request.setCharacterEncoding("UTF-8");
         String requestURL = request.getRequestURL().toString();
-        requestURL = requestURL.replace("/to_url", "/search");
+        requestURL = requestURL.replace("/to_sql_url", "/to_sql");
         String queryString = request.getQueryString();
-        System.out.println(queryString);
         String fullURL = requestURL + "?" + queryString;
         HttpSession session = request.getSession();
         session.setAttribute("requestUrlOut", fullURL);
