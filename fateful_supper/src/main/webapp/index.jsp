@@ -38,8 +38,8 @@
         </select><br><br>
         <div>
             <label for="excludedTypes">排除類型:</label><br>
-            <%-- 停車場選項為無排除類型時補空用 --%>
-            <input type="checkbox" id="excludedTypes" name="excludedTypes" value="parking" checked hidden>
+            <%-- 博物館選項為無排除類型時補空用 --%>
+            <input type="checkbox" id="excludedTypes" name="excludedTypes" value="museum" checked hidden>
             <input type="checkbox" id="excludeRestaurant" name="excludedTypes" value="restaurant">
             <label for="excludeRestaurant">餐廳</label>
             <input type="checkbox" id="excludeFoodStore" name="excludedTypes" value="food_store">
