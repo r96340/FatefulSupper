@@ -75,6 +75,7 @@ public class SQLConversionServlet extends HttpServlet {
         json.append("\"languageCode\":").append("\"zh-TW\"").append(",");
         json.append("\"includedTypes\":[\"").append(includedTypes).append("\"],");
         json.append("\"excludedTypes\":[");
+        json.append("\"").append("museum").append("\"");
         for (int i = 0; i < excludedTypes.length; i++) {
             json.append("\"").append(excludedTypes[i]).append("\"");
             if (i < excludedTypes.length - 1) {
